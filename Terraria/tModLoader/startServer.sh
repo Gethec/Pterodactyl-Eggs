@@ -1,6 +1,16 @@
 #!/bin/bash
 RED='\033[0;31m'
 
+if [ ! -L ~/.steam/sdk32 ]; then
+    echo "Creating Steam SDK32 symlink"
+    ln -s ~/.local/share/Steam/steamcmd/linux32 ~/.steam/sdk32
+fi
+
+if [ ! -L ~/.steam/sdk64 ]; then
+    echo "Creating Steam SDK64 symlink"
+    ln -s ~/.local/share/Steam/steamcmd/linux64 ~/.steam/sdk64
+fi
+
 if [ "$WORLD_SIZE" == "0" ]
 then
     if [ -e ~/saves/Worlds/${WORLD_NAME}.wld ]
