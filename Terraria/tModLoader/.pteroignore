@@ -1,3 +1,5 @@
 *
-!/mods
+!/mods/enabled.json
 !/saves
+/saves/Worlds/Backups
+/saves/Worlds/*.bak*
