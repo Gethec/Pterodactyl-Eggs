@@ -18,7 +18,7 @@ START_COMMAND="./start-tModLoader.sh -server -tmlsavedirectory ~/saves -modpath 
 
 # Add secure flag if enabled
 if [ $SECURE_SERVER ]; then
-    START_COMMAND = ${START_COMMAND} + " -secure"
+    START_COMMAND=$START_COMMAND+" -secure"
 fi
 
 # Perform startup logic
@@ -29,7 +29,7 @@ else
         echo -e "${RED}Auto-generation is disabled and the specified world file \"${WORLD_NAME}\" is not present!  Upload a world file with the correct name, or change startup settings to generate a world."
         exit 1
     else
-        START_COMMAND = ${START_COMMAND} + " -autocreate ${WORLD_SIZE} -worldname \"${WORLD_NAME}\" -seed \"${WORLD_SEED}\""
+        START_COMMAND=${START_COMMAND}+" -autocreate ${WORLD_SIZE} -worldname \"${WORLD_NAME}\" -seed \"${WORLD_SEED}\""
         echo -e $START_COMMAND
     fi
 fi
